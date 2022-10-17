@@ -1,0 +1,19 @@
+
+.new-contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: white;
+    color: grey;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button{
+    align-self: flex-end;
+}
+
+label{
+    cursor: pointer;
+}
