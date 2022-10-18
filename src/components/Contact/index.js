@@ -1,3 +1,4 @@
+import ViewAndEditContact from '../ViewAndEditContact';
 import DownArrow from '../Svg/down-arrow.svg'
 import UpArrow from '../Svg/up-arrow.svg'
 import './styles.css'
@@ -9,31 +10,6 @@ export default function Contact(props){
     
     }
 
-    const x = 
-    <div>
-            <form onSubmit={props.SubmitNewContact} className = 'contact-form'>
-            <label htmlFor='firstName'>First Name:</label>
-            <input  value={props.contact.firstName} type='text' id='firstName'/>
-
-            <label htmlFor='lastName'>Last Name:</label>
-            <input value={props.contact.lastName} type='text' id='lastName'/>
-
-            <label htmlFor='address'>Address:</label>
-            <input value={props.contact.address} type='text' id='address'/>
-
-            <label htmlFor='phonenumber'>Phone Number:</label>
-            <input value={props.contact.phoneNumber} type='text' id='phoneNumber'/>
-
-            <label htmlFor='avatarUpload'>Avatar</label>
-            <input value='' name = 'choor avatar' type='file' id='avatar' accept="image/png"/>
-
-            <button style={{width:'100px'}} >Edit</button>
-
-            <button style={{width:'100px'}} >Delete</button>
-
-            </form>
-
-    </div>
 
     return ( 
         <div className='contact'>
@@ -53,7 +29,7 @@ export default function Contact(props){
                 </div>
             </div>
             <div>
-            {props.contact.showMoreDetails && x} 
+            {props.contact.showMoreDetails && <ViewAndEditContact contact = {props.contact} updateExistingContact={props.updateExistingContact}/>} 
             </div>                                  
         </div>
     )

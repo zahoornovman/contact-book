@@ -7,7 +7,7 @@ import Avatar from '../Svg/logo.svg'
 
 export default class ContactBook extends Component{
     constructor(props){
-        super();
+        super(props);
         this.state = {
             contacts: [
                 {
@@ -34,7 +34,6 @@ export default class ContactBook extends Component{
     }
 
     addingNewContact = (newContact) => {
-      //const newState = this.state.push(newContact);
       console.log('Printing the new Contact');
       console.log(newContact);
       this.toggleShowAddNew();
@@ -42,8 +41,18 @@ export default class ContactBook extends Component{
         contacts: [...this.state.contacts, newContact]
       })
 
-
     }
+
+      // need to write function to update existing contact
+    updateExistingContact = (updatedContact) => {
+      console.log('contact updated')
+      
+      console.log(updatedContact);
+      
+    }
+
+
+    
 
     toggleShowAddNew = () => {
       if (this.state.showAddNew === true){
@@ -90,7 +99,7 @@ export default class ContactBook extends Component{
                        
             {                    
               this.state.contacts.map((contact,index) =>
-                <Contact key={index} id={index} toggleShowMoreDetails= {this.toggleShowMoreDetails} contact={contact} classname = 'contact' />
+                <Contact key={index} id={index} toggleShowMoreDetails= {this.toggleShowMoreDetails} updateExistingContact={this.updateExistingContact} contact={contact} classname = 'contact' />
               )
             }
             </div>
