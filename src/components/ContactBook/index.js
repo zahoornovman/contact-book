@@ -15,7 +15,7 @@ export default class ContactBook extends Component{
                   firstName: 'SIT',
                   lastName: 'Academy',
                   address: 'Zurich',
-                  avatar: Avatar,
+                  avatar: '../Svg/logo.svg',
                   phoneNumber: '+41123456789',
                   showMoreDetails: false
                 },
@@ -92,6 +92,7 @@ export default class ContactBook extends Component{
               style = {{height:50, width: 36}}
               id = 'plus-svg'
               alt= 'Add Contact'
+              role='button'
               
             />
             {this.state.showAddNew && <AddContact addingNewContact={this.addingNewContact} new_id={this.state.contacts.length} className='new-contact'/>}
@@ -99,10 +100,11 @@ export default class ContactBook extends Component{
                        
             {                    
               this.state.contacts.map((contact,index) =>
-                <Contact key={index} id={index} toggleShowMoreDetails= {this.toggleShowMoreDetails} updateExistingContact={this.updateExistingContact} contact={contact} classname = 'contact' />
+                <Contact key={this.state.contacts.id} id={this.state.contacts.id} toggleShowMoreDetails= {this.toggleShowMoreDetails} updateExistingContact={this.updateExistingContact} contact={contact} classname = 'contact' />
               )
             }
             </div>
           )
     }
 }
+

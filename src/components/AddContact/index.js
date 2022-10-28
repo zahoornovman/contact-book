@@ -18,6 +18,23 @@ export default class AddContact extends Component{
                 }               
     }
 
+    onChangeHandler = (e) => {
+        console.log(e)
+        let newState;
+        if (e.target.id === 'avatar'){
+            newState = {[e.target.id] : e.target.files[0]}
+        } else {
+            newState = { [e.target.id]: e.target.value }
+        }
+        this.setState(newState)
+    }
+
+    SubmitNewContact = (e) => {
+        e.preventDefault()
+        console.log(this.state);
+        this.props.addingNewContact(this.state);
+    }
+
     render(){
         
         return(
@@ -46,24 +63,4 @@ export default class AddContact extends Component{
             </form>
         )       
     }
-
-    onChangeHandler = (e) => {
-        console.log(e)
-        let newState;
-        if (e.target.id === 'avatar'){
-            newState = {[e.target.id] : e.target.files[0]}
-        } else {
-            newState = { [e.target.id]: e.target.value }
-        }
-        this.setState(newState)
-    }
-
-    SubmitNewContact = (e) => {
-        e.preventDefault()
-        console.log(this.state);
-        this.props.addingNewContact(this.state);
-    }
-
-        
-
 }

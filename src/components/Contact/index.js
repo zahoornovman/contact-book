@@ -15,7 +15,7 @@ export default function Contact(props){
         <div className='contact'>
             <div className='contact_card'>
                 <div className='name'>
-                    <img src={props.contact.avatar} style = {{height:60, width: 60}} />
+                    <img src={props.contact.avatar} style = {{height:60, width: 60}} alt='Svg Image' />
                     {props.contact.firstName + ' '}
                     {props.contact.lastName}
                 </div>
@@ -25,6 +25,7 @@ export default function Contact(props){
                     src={props.contact.showMoreDetails === false ? DownArrow : UpArrow} 
                     style = {{height:40, width: 20}}
                     alt= 'Contact Display'
+                    role='button'
                     />
                 </div>
             </div>
